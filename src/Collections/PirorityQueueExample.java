@@ -1,3 +1,5 @@
+package Collections;
+
 import java.util.PriorityQueue;
 
 class PirorityQueueExample implements Comparable<PirorityQueueExample> {
@@ -14,11 +16,11 @@ class PirorityQueueExample implements Comparable<PirorityQueueExample> {
     }
 
     private void updateWaitTime() {
-        this.waitTime = cookingTime + (System.currentTimeMillis() - orderTime) / 1000; // Convert time to seconds for simplicity
+        this.waitTime = (int) (cookingTime + (System.currentTimeMillis() - orderTime) / 1000); // Convert time to seconds for simplicity
     }
 
     @Override
-    public int compareTo(Order other) {
+    public int compareTo(PirorityQueueExample other) {
         return this.waitTime - other.waitTime; // Order with lower wait time comes first
     }
 }
